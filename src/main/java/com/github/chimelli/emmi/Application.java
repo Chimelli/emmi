@@ -45,10 +45,18 @@ public class Application {
     	byte[] picture1 = Files.readAllBytes(Paths.get("src/main/resources/static/mannakuva.jpg"));
     	byte[] picture2 = Files.readAllBytes(Paths.get("src/main/resources/static/emmikuva.jpg"));
     	byte[] picture3 = Files.readAllBytes(Paths.get("src/main/resources/static/tillikuva.jpg"));
-    	for(int i = 0; i < 4; i++){
-    		pictureRepository.save(new Picture(picture1, "Manna ratsastaa ponilla"));
+    	for(int i = 0; i < 4; i++) {
+    		Picture newPicture = new Picture(picture1, "Manna ratsastaa ponilla");
+    		pictureRepository.save(newPicture);
     		pictureRepository.save(new Picture(picture2, "Emmi ratsastaa ponilla"));
     		pictureRepository.save(new Picture(picture3, "Tilli ratsastaa ponilla"));
+	    	for(int o = 0; o < 20; o++) {
+	    		commentRepository.save(new Comment(newPicture, "Laura", "Söpö kuva!"));
+	    		commentRepository.save(new Comment(newPicture, "Manna", "Jep!"));
+	    		commentRepository.save(new Comment(newPicture, "Toni", "Terveisiä kuvan ottajalle! Terveisiä myös sivun tekijälle."));
+	    		commentRepository.save(new Comment(newPicture, "Emmi", "Minä tykkään Mannasta vain vähän. Isistä ja Tillistä tykkään tosi paljon, mutta äitistäkin tykkään vain vähän. Kaikki tykkää Emmistä. Emmi tykkää syksystä ja talvesta ja keväästä ja kesästä."));
+	    		commentRepository.save(new Comment(newPicture, "Tilli", "apuaaaa"));
+	    	}
     	}
     }
 }

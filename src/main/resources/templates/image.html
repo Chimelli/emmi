@@ -12,7 +12,7 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="header col-md-12">
 					<h1>Katso ja kommentoi</h1>
 				</div>
 			</div>
@@ -40,9 +40,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3">
-					<ul class="list-unstyled" th:each="comment : ${comments}">
-						<li><strong><span th:text="${comment.name} + ': '" /></strong>
+				<div class="col-md-3 comments">
+					<ul class="list-unstyled">
+						<li th:each="comment : ${comments}">
+						<strong><span th:text="${comment.name} + ': '" /></strong>
 						<span th:text="${comment.comment}" />
 						</li>
 					</ul>

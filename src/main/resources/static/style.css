@@ -1,10 +1,23 @@
+.header{
+	background-color: #ffbbee;
+	border: #ff99cc 5px solid;
+	border-radius: 5px;
+	margin-bottom: 1em;
+}
+
+.header h1{
+	line-height: 2em;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 .imageview{
 	padding-bottom: 3em;
 	max-height: 100%;
 }
 
 .commentform{
-	padding-bottom: 3em
+	padding-bottom: 3em;
 }
 
 .imageselect{
@@ -12,12 +25,16 @@
 	padding-right: 3em;
 	max-width: 300px;
 	max-height: 300px;
-	display: inline-block
+	display: inline-block;
 }
 .imageselect img{
 	max-height: 300px;
 }
+.comments {
+	overflow-y: scroll;
+	max-height: 600px;
+}
 
 .pictureform{
-	padding-bottom: 3em
+	padding-bottom: 3em;
 }
