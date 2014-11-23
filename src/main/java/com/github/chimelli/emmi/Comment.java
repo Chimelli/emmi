@@ -6,12 +6,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Comment {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
 	@ManyToOne
+	@JsonIgnore
 	private Picture picture;
 	private String name;
 	private String comment;
