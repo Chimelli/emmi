@@ -1,0 +1,23 @@
+.imageview{
+	padding-bottom: 3em;
+	max-height: 100%;
+}
+
+.commentform{
+	padding-bottom: 3em
+}
+
+.imageselect{
+	padding-bottom: 3em;
+	padding-right: 3em;
+	max-width: 300px;
+	max-height: 300px;
+	display: inline-block
+}
+.imageselect img{
+	max-height: 300px;
+}
+
+.pictureform{
+	padding-bottom: 3em
+}

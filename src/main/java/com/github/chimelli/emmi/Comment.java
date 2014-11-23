@@ -4,12 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Comment {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
+	@ManyToOne
+	private Picture picture;
 	private String name;
 	private String comment;
 	
@@ -17,7 +20,8 @@ public class Comment {
 		
 	}
 	
-	public Comment(String name, String comment) {
+	public Comment(Picture picture, String name, String comment) {
+		this.picture = picture;
 		this.name = name;
 		this.comment = comment;
 	}
@@ -36,5 +40,13 @@ public class Comment {
 	
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Picture getPicture() {
+		return picture;
+	}
+
+	public void setPicture(Picture picture) {
+		this.picture = picture;
 	}
 }

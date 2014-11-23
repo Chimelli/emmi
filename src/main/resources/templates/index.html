@@ -6,12 +6,40 @@
 		<script src="webjars/jquery/2.1.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="webjars/bootstrap/3.3.1/css/bootstrap.min.css" />
 		<script src="webjars/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="/style.css" />
 	</head>
 	<body>
-		<h1>Kuvat</h1>
-		<p>Valitse kuva</p>
-		<a href="manna">
-			<img src="kuva.jpg" alt="Manna ratsastaa" />
-		</a>
+		<div class="container">
+			<div class="row">
+			<div class="col-md-12">
+				<h1>Kuvat</h1>
+				<p>Valitse kuva</p>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-12">
+				<div th:each="picture : ${pictures}" class="imageselect">
+					<a th:href="'/view/' + ${picture.id}">
+						<img th:src="'/img/' + ${picture.id}" class="img-responsive" alt="" />
+					</a>
+				</div>
+			</div>
+			</div>
+			<div class="row">
+				<div class="pictureform col-md-3">
+					<form action="/add" method="post" role="form" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="picture">Lisää kuva</label>
+							<input name="picture" id="picture" type="file"></input>
+						</div>
+						<div class="form-group">
+							<label for="caption">Anna kuvateksti</label>
+							<input type="text" class="form-control" id="caption" name="caption"></input>
+						</div>
+						<button type="submit" class="btn btn-default">Lähetä kuva</button>
+					</form>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
