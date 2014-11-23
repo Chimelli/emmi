@@ -1,9 +1,11 @@
 buildscript {
     ext {
-        springBootVersion = '1.1.9.RELEASE'
+        springBootVersion = '1.2.0.RC2'
     }
     repositories {
         mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -26,6 +28,8 @@ targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+	maven { url "https://repo.spring.io/snapshot" }
+	maven { url "https://repo.spring.io/milestone" }
 }
 
 configurations {
