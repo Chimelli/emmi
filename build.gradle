@@ -60,3 +60,5 @@ eclipse {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.2'
 }
+
+task stage(dependsOn: ['clean', 'installApp'])
