@@ -61,4 +61,15 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.2'
 }
 
-task stage(dependsOn: ['clean', 'installApp'])
+task stage(type: Copy, dependsOn: [clean, build]) {
+    from war.archivePath
+    into project.rootDir 
+    rename {
+        'emmi.war'
+    }
+}
+stage.mustRunAfter(clean)
+
+clean << {
+    project.file('emmi.war').delete()
+}
